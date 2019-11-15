@@ -52,9 +52,9 @@ class Person {
     }
   }
   poop(){
-    if(this.stomach.length <= 10){
+   
     this.stomach.length = 0;
-    }
+    
   }
   toString(){
     return `${this.name}, ${this.age}`
@@ -88,18 +88,17 @@ class Car {
     }
   }
   drive(distance){
+
     if(distance <= this.tank * this.milesPerGallon){
       
-      this.tank = distance /this.milesPerGallon;
-      this.odometer += this.odometer + distance;
+      this.tank -= (distance /this.milesPerGallon);
+      this.odometer += distance;
     } if(distance > this.tank * this.milesPerGallon) {
+      this.odometer += this.tank * this.milesPerGallon;
       this.tank = 0;
+
+      return `I ran out of fuel at ${this.odometer} miles`
     }
-      
-      if (this.tank < this.tank / this.milesPerGallon){
-        
-      return `I ran out of fuel at ${this.odometer} miles`;
-      }
   }
 
 }
